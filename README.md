@@ -631,16 +631,6 @@ The Raspberry Pi should not be considered a backup by itself.
 
 Important data should be copied to another storage device.
 
-```text
-                 🥧 Raspberry Pi
-                       │
-               ┌───────┴───────┐
-               │               │
-           💽 Main SSD      💾 Backup Drive
-               │               │
-           📁 Media          📦 Backup
-```
-
 ### Important data to back up
 
 - 🎬 Movies
@@ -654,40 +644,6 @@ Important data should be copied to another storage device.
 
 ---
 
-# 📊 Monitoring
-
-Useful information to monitor:
-
-```text
-🧠 CPU Usage
-💾 RAM Usage
-💽 Storage Usage
-🌡️ Temperature
-🌐 Network Activity
-🐳 Docker Containers
-🟢 Service Availability
-```
-
-Useful commands:
-
-```bash
-htop
-```
-
-```bash
-df -h
-```
-
-```bash
-free -h
-```
-
-```bash
-vcgencmd measure_temp
-```
-
----
-
 # 🧪 Testing
 
 After installation, test each service.
@@ -698,31 +654,6 @@ After installation, test each service.
 | 🛡️ Pi-hole | `http://<RASPBERRY_PI_IP>/admin` |
 | 🎬 Jellyfin | `http://<RASPBERRY_PI_IP>:8096` |
 | 🎵 Navidrome | `http://<RASPBERRY_PI_IP>:4533` |
-
----
-
-# 📱 Client Devices
-
-The services can be accessed from devices connected to the home network.
-
-```text
-                         🏠 HOME NETWORK
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-          💻 Laptop         📱 Phone         📺 Smart TV
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                               ▼
-                     🥧 Raspberry Pi 4
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-         🎬 Jellyfin      🎵 Navidrome      🛡️ Pi-hole
-```
 
 ---
 
@@ -761,63 +692,6 @@ This project provides practical experience with:
 
 ---
 
-# 📸 Screenshots & Gallery
-
-Add your project screenshots to the `images` directory.
-
-```text
-images/
-├── 🥧 server.jpg
-├── 🏠 casaos.jpg
-├── 🎬 jellyfin.jpg
-├── 🎵 navidrome.jpg
-└── 🛡️ pihole.jpg
-```
-
-### 🥧 Raspberry Pi Server
-
-![Raspberry Pi Home Server](images/server.jpg)
-
-### 🏠 CasaOS Dashboard
-
-![CasaOS Dashboard](images/casaos.jpg)
-
-### 🎬 Jellyfin
-
-![Jellyfin Media Server](images/jellyfin.jpg)
-
-### 🎵 Navidrome
-
-![Navidrome Music Server](images/navidrome.jpg)
-
-### 🛡️ Pi-hole
-
-![Pi-hole Dashboard](images/pihole.jpg)
-
-> 📌 Replace the image filenames above with your actual screenshots.
-
----
-
-# 📂 Repository Structure
-
-```text
-Raspberry-Pi-Home-Server/
-│
-├── 📄 README.md
-│
-├── 📸 images/
-│   ├── 🥧 server.jpg
-│   ├── 🏠 casaos.jpg
-│   ├── 🎬 jellyfin.jpg
-│   ├── 🎵 navidrome.jpg
-│   └── 🛡️ pihole.jpg
-│
-└── 📚 documentation/
-    └── notes.md
-```
-
----
-
 # 📌 Project Information
 
 | 📋 Category | 🔎 Details |
@@ -852,36 +726,17 @@ Raspberry-Pi-Home-Server/
 
 <div align="center">
 
-## Gavindu Kavishka
+## Gavindu Kavishka (@gavindu2006)
 
 **Technology enthusiast building and learning through practical projects.**
 
 <br>
 
-[![GitHub](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006)
-[![Portfolio](https://img.shields.io/badge/Portfolio-gavindu2006.pages.dev-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gavindu2006.pages.dev/)
+[![GitHub (Main)](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006)
+[![GitHub (Project)](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006-projects)
 
 <br>
 
-### 🚀 Learn. Build. Master.
+[![Portfolio](https://img.shields.io/badge/Portfolio-gavindu2006.pages.dev-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gavindu2006.pages.dev)
 
 </div>
-
----
-
-<div align="center">
-
-🥧 **Built with Raspberry Pi** • 🐧 **Powered by Linux** • 🏠 **Self-Hosted**
-
-</div>
-
-
-# Author
-
-**Gavindu Kavishka (@gavindu2006)**
-
-Technology enthusiast building and learning through practical projects.
-
-- GitHub (Main): https://github.com/gavindu2006
-- GitHub (Project): https://github.com/gavindu2006-projects
-- Portfolio: https://gavindu2006.pages.dev
