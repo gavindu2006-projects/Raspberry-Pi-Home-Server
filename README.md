@@ -937,19 +937,9 @@ Raspberry-Pi-Home-Server/
 
 # Author
 
-**Gavindu Kavishka**
+**Gavindu Kavishka (@gavindu2006)**
 
 Technology enthusiast building and learning through practical projects.
 
 - GitHub: https://github.com/gavindu2006
 - Portfolio: https://gavindu2006.pages.dev/
-
----
-
-<p align="center">
-  <strong>Learn. Build. Master.</strong>
-</p>
-
-<p align="center">
-  Built with ❤️ using Raspberry Pi
-</p>
