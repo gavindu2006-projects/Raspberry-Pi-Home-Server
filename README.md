@@ -1,223 +1,189 @@
+<div align="center">
+
 # 🏠 Raspberry Pi Home Server
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Raspberry%20Pi-4%20Model%20B-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white">
-  <img src="https://img.shields.io/badge/DietPi-Linux-0F6B3A?style=for-the-badge&logo=linux&logoColor=white">
-  <img src="https://img.shields.io/badge/CasaOS-Server-4CAF50?style=for-the-badge&logo=linux&logoColor=white">
-  <img src="https://img.shields.io/badge/Jellyfin-Media-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white">
-  <img src="https://img.shields.io/badge/Navidrome-Music-5C6BC0?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Pi--hole-DNS-96060C?style=for-the-badge&logo=pihole&logoColor=white">
-</p>
+### 🥧 Self-Hosted • 🎬 Media • 🎵 Music • 🛡️ Network
 
-<p align="center">
-  A lightweight self-hosted home server built with a Raspberry Pi 4 Model B.
-</p>
+A lightweight self-hosted home server built with a **Raspberry Pi 4 Model B**.
 
-<p align="center">
-  <strong>Learn • Build • Self-Host</strong>
-</p>
+<br>
+
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-4%20Model%20B-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
+[![DietPi](https://img.shields.io/badge/DietPi-Linux-0F6B3A?style=for-the-badge&logo=linux&logoColor=white)](https://dietpi.com/)
+[![CasaOS](https://img.shields.io/badge/CasaOS-Server-4CAF50?style=for-the-badge&logo=linux&logoColor=white)](https://casaos.io/)
+[![Jellyfin](https://img.shields.io/badge/Jellyfin-Media-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white)](https://jellyfin.org/)
+[![Navidrome](https://img.shields.io/badge/Navidrome-Music-5C6BC0?style=for-the-badge)](https://www.navidrome.org/)
+[![Pi-hole](https://img.shields.io/badge/Pi--hole-DNS-96060C?style=for-the-badge&logo=pihole&logoColor=white)](https://pi-hole.net/)
+
+<br>
+
+**Learn • Build • Self-Host**
+
+</div>
 
 ---
 
 ## 📖 About
 
-This project turns a **Raspberry Pi 4 Model B** into a lightweight home server for running useful self-hosted services on a local network.
+This project turns a **Raspberry Pi 4 Model B** into a personal home server for running useful self-hosted services on a local network.
 
-The server uses **DietPi** as the operating system and **CasaOS** as a simple web-based interface for managing applications.
+The system uses **DietPi** as the lightweight operating system and **CasaOS** as the main web-based management interface.
 
-### Services
-
-- 🛡️ **Pi-hole** — Network-wide DNS filtering
-- 🎬 **Jellyfin** — Personal media server
-- 🎵 **Navidrome** — Personal music server
-- 🏠 **CasaOS** — Server and application management
-
-The project is also a practical home lab for learning **Linux, networking, Docker, storage management, server administration, and self-hosting**.
+The server is designed as both a useful home server and a practical learning environment for **Linux, networking, Docker, storage, DNS, media servers, and self-hosting**.
 
 ---
 
 ## ✨ Features
 
-### 🖥️ Self-Hosted Home Server
-
-Run useful services locally on your own Raspberry Pi instead of depending entirely on cloud services.
-
-### 🎬 Media Streaming
-
-Use Jellyfin to organize and stream personal movies and TV shows across devices on the home network.
-
-### 🎵 Music Streaming
-
-Use Navidrome to access and stream a personal music collection from computers, phones, and other supported devices.
-
-### 🛡️ Network-Wide DNS Filtering
-
-Pi-hole provides DNS-based ad and tracker blocking for devices connected to the home network.
-
-### ⚙️ Simple Server Management
-
-CasaOS provides a convenient web interface for managing applications and services running on the server.
-
-### 🐧 Lightweight Linux Server
-
-DietPi provides a lightweight Linux environment designed to keep resource usage low on Raspberry Pi hardware.
+| 🏠 Feature | 📝 Description |
+|---|---|
+| 🛡️ **Pi-hole** | Network-wide DNS filtering and ad/tracker blocking |
+| 🎬 **Jellyfin** | Personal movie and TV media server |
+| 🎵 **Navidrome** | Personal music streaming server |
+| 🖥️ **CasaOS** | Simple web interface for managing applications |
+| 🐧 **DietPi** | Lightweight Linux operating system |
+| 💽 **External Storage** | USB SSD/HDD for media and server data |
+| 🌐 **Local Network** | Services accessible across the home network |
+| 🐳 **Docker** | Containerized applications and services |
 
 ---
 
-# System Architecture
+## 🏗️ System Architecture
 
 ```text
-                         +---------------------+
-                         |      Internet       |
-                         +----------+----------+
-                                    |
-                         +----------v----------+
-                         |    Home Router      |
-                         |   Network / DHCP    |
-                         +----------+----------+
-                                    |
+                              🌐 INTERNET
+                                  │
+                                  ▼
+                         ┌─────────────────┐
+                         │  🛜 HOME ROUTER │
+                         │   DHCP / LAN    │
+                         └────────┬────────┘
+                                  │
                               Ethernet
-                                    |
-                         +----------v----------+
-                         |   Raspberry Pi 4    |
-                         |      Model B        |
-                         +----------+----------+
-                                    |
-                         +----------v----------+
-                         |       DietPi        |
-                         |      Linux OS       |
-                         +----------+----------+
-                                    |
-                         +----------v----------+
-                         |       CasaOS         |
-                         |  Server Management  |
-                         +----------+----------+
-                                    |
-                +-------------------+-------------------+
-                |                   |                   |
-        +-------v-------+   +-------v------+   +--------v--------+
-        |    Jellyfin   |   |  Navidrome  |   |     Pi-hole     |
-        |  Media Server |   | Music Server|   |   DNS Filtering |
-        +-------+-------+   +------+-------+   +-----------------+
-                |                  |
-                +--------+---------+
-                         |
-                  +------v------+
-                  |  USB SSD/HDD|
-                  |             |
-                  |  Movies     |
-                  |  TV Shows   |
-                  |  Music      |
-                  +-------------+
+                                  │
+                                  ▼
+                     ┌────────────────────────┐
+                     │   🥧 RASPBERRY PI 4    │
+                     │       MODEL B          │
+                     └────────────┬───────────┘
+                                  │
+                                  ▼
+                     ┌────────────────────────┐
+                     │        🐧 DIETPI       │
+                     │      Linux Server      │
+                     └────────────┬───────────┘
+                                  │
+                                  ▼
+                     ┌────────────────────────┐
+                     │        🏠 CASAOS       │
+                     │  Server Management UI  │
+                     └────────────┬───────────┘
+                                  │
+              ┌───────────────────┼───────────────────┐
+              │                   │                   │
+              ▼                   ▼                   ▼
+      ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+      │  🎬 JELLYFIN  │   │ 🎵 NAVIDROME  │   │   🛡️ PI-HOLE  │
+      │ Media Server  │   │ Music Server  │   │ DNS Filtering │
+      └───────┬───────┘   └───────┬───────┘   └───────────────┘
+              │                   │
+              └─────────┬─────────┘
+                        │
+                        ▼
+               ┌──────────────────┐
+               │   💽 USB SSD/HDD │
+               │                  │
+               │  🎬 Movies       │
+               │  📺 TV Shows     │
+               │  🎵 Music        │
+               │  ⚙️ Server Data  │
+               └──────────────────┘
 ```
 
 ---
 
-# Hardware
+## 🧰 Hardware
 
-| Component | Description |
+| 🔧 Component | 📋 Details |
 |---|---|
-| Raspberry Pi | Raspberry Pi 4 Model B |
-| System Storage | microSD card |
-| Media Storage | USB SSD/HDD |
-| Network | Ethernet |
-| Power | Raspberry Pi-compatible power supply |
-| Display | Optional |
-| Keyboard | Optional |
+| 🥧 Raspberry Pi | Raspberry Pi 4 Model B |
+| 💾 System Storage | microSD card |
+| 💽 Main Data Storage | USB SSD/HDD |
+| 🌐 Network | Ethernet |
+| 🔌 Power | Raspberry Pi-compatible power supply |
+| 🖥️ Display | Optional |
+| ⌨️ Keyboard | Optional |
 
-> Recommendation: Use a USB 3 SSD/HDD for the media library instead of storing large amounts of media on the microSD card.
+> 💡 **Tip:** A USB 3 SSD/HDD is recommended for large media libraries instead of using the microSD card for everything.
 
 ---
 
-# Software
+## 💻 Software Stack
 
-| Software | Purpose |
+| 🧩 Software | 🎯 Purpose |
 |---|---|
-| DietPi | Lightweight Linux operating system |
-| CasaOS | Web-based server management |
-| Pi-hole | DNS-based ad and tracker blocking |
-| Jellyfin | Media server |
-| Navidrome | Music server |
-| Docker | Container management |
+| 🐧 **DietPi** | Lightweight Linux operating system |
+| 🏠 **CasaOS** | Server and application management |
+| 🛡️ **Pi-hole** | DNS filtering |
+| 🎬 **Jellyfin** | Movies and TV streaming |
+| 🎵 **Navidrome** | Music streaming |
+| 🐳 **Docker** | Application containers |
 
 ---
 
-# Storage Structure
+## 💽 Storage Layout
 
 ```text
 /mnt/storage/
+│
 └── media/
-    ├── movies/
-    ├── tv/
-    └── music/
-```
-
-### Movies
-
-```text
-movies/
-├── Movie 1/
-│   └── Movie 1.mkv
-├── Movie 2/
-│   └── Movie 2.mp4
-└── Movie 3/
-    └── Movie 3.mkv
-```
-
-### TV Shows
-
-```text
-tv/
-├── Show 1/
-│   ├── Season 01/
-│   │   ├── S01E01.mkv
-│   │   └── S01E02.mkv
-│   └── Season 02/
-└── Show 2/
-    └── Season 01/
-```
-
-### Music
-
-```text
-music/
-├── Artist 1/
-│   └── Album/
-│       ├── 01 - Song.mp3
-│       └── 02 - Song.mp3
-└── Artist 2/
-    └── Album/
-        └── 01 - Song.flac
+    │
+    ├── 🎬 movies/
+    │   ├── Movie 1/
+    │   ├── Movie 2/
+    │   └── Movie 3/
+    │
+    ├── 📺 tv/
+    │   ├── Show 1/
+    │   │   ├── Season 01/
+    │   │   └── Season 02/
+    │   │
+    │   └── Show 2/
+    │
+    └── 🎵 music/
+        ├── Artist 1/
+        └── Artist 2/
 ```
 
 ---
 
-# Installation
+# 🚀 Installation
 
-## 1. Install DietPi
+## 1️⃣ Install DietPi
 
-Download the latest Raspberry Pi version of DietPi:
+Download DietPi for Raspberry Pi:
 
-https://dietpi.com/
+👉 https://dietpi.com/
 
-Flash the DietPi image to a microSD card using Raspberry Pi Imager or balenaEtcher.
+Flash the image to a microSD card using:
 
-Insert the microSD card into the Raspberry Pi.
+- 🥧 Raspberry Pi Imager
+- 💿 balenaEtcher
 
-Connect:
+Insert the card into the Raspberry Pi and connect:
 
-- Ethernet cable
-- Power supply
-- Optional HDMI display
-- Optional keyboard
+- 🌐 Ethernet
+- 🔌 Power
+- 🖥️ Optional HDMI display
+- ⌨️ Optional keyboard
 
-Power on the Raspberry Pi and complete the initial DietPi setup.
+Complete the initial DietPi setup.
 
 ---
 
-## 2. Connect Using SSH
+## 2️⃣ 🔐 Connect Using SSH
 
-Find the Raspberry Pi's IP address:
+Find the Raspberry Pi IP address:
 
 ```bash
 hostname -I
@@ -235,19 +201,15 @@ Connect from another computer:
 ssh root@192.168.1.100
 ```
 
-Replace the IP address with the actual address of your Raspberry Pi.
+> 🔒 Replace the example IP address with the actual IP address of your Raspberry Pi.
 
 ---
 
-# 3. Update DietPi
-
-Update the package list:
+## 3️⃣ 🔄 Update DietPi
 
 ```bash
 apt update
 ```
-
-Upgrade installed packages:
 
 ```bash
 apt upgrade -y
@@ -259,13 +221,11 @@ Reboot:
 reboot
 ```
 
-Reconnect using SSH after the Raspberry Pi starts again.
-
 ---
 
-# 4. Configure the Network
+## 4️⃣ 🌐 Configure the Network
 
-A wired Ethernet connection is recommended for this server.
+A wired Ethernet connection is recommended.
 
 Check network interfaces:
 
@@ -279,29 +239,25 @@ Check the current IP:
 hostname -I
 ```
 
-For a home server, the Raspberry Pi should have a predictable IP address.
+### ⭐ Recommended: DHCP Reservation
 
-### Recommended
-
-Create a DHCP reservation in your router.
+Create a DHCP reservation in your router so the Raspberry Pi keeps the same local IP.
 
 Example:
 
 ```text
-Raspberry Pi
-      |
-      +-- 192.168.1.100
+🥧 Raspberry Pi
+       │
+       └── 192.168.1.100
 ```
 
-This allows services to remain accessible at the same IP address.
+This makes accessing the services easier and more reliable.
 
 ---
 
-# 5. Install CasaOS
+## 5️⃣ 🏠 Install CasaOS
 
-CasaOS provides a web interface for managing applications and services.
-
-Install CasaOS:
+Install CasaOS using its installation method:
 
 ```bash
 curl -fsSL https://get.casaos.io | sudo bash
@@ -321,15 +277,15 @@ http://192.168.1.100
 
 Complete the initial CasaOS configuration.
 
-> Note: Check the current CasaOS documentation for supported operating systems and installation requirements before installing on a new system.
+> ⚠️ Check the current CasaOS documentation for supported operating systems and installation requirements before installing on a new system.
 
 ---
 
-# 6. Connect External Storage
+## 6️⃣ 💽 Connect External Storage
 
-Connect the USB SSD/HDD to the Raspberry Pi.
+Connect the USB SSD/HDD.
 
-List available drives:
+Check available drives:
 
 ```bash
 lsblk
@@ -346,25 +302,25 @@ mmcblk0
 └── mmcblk0p2
 ```
 
-Create a mount directory:
+Create the mount directory:
 
 ```bash
 mkdir -p /mnt/storage
 ```
 
-Mount the external drive:
+Mount the drive:
 
 ```bash
 mount /dev/sda1 /mnt/storage
 ```
 
-Check the mounted storage:
+Check storage:
 
 ```bash
 df -h
 ```
 
-Create the media directories:
+Create media directories:
 
 ```bash
 mkdir -p /mnt/storage/media
@@ -373,25 +329,17 @@ mkdir -p /mnt/storage/media/tv
 mkdir -p /mnt/storage/media/music
 ```
 
-Final structure:
-
-```text
-/mnt/storage/
-└── media/
-    ├── movies/
-    ├── tv/
-    └── music/
-```
-
-> Important: /dev/sda1 is only an example. Always verify the correct drive using lsblk before mounting or formatting anything.
+> ⚠️ **Important:** `/dev/sda1` is only an example. Always verify the correct drive using `lsblk` before mounting or formatting a drive.
 
 ---
 
-# 7. Install Pi-hole
+# 🛡️ Pi-hole
+
+## 7️⃣ Install Pi-hole
 
 Pi-hole provides network-wide DNS filtering.
 
-Install Pi-hole using the official installation method:
+Install using the official installation method:
 
 ```bash
 curl -sSL https://install.pi-hole.net | bash
@@ -399,13 +347,13 @@ curl -sSL https://install.pi-hole.net | bash
 
 During installation:
 
-1. Select the correct network interface.
-2. Confirm the Raspberry Pi's IP address.
-3. Select an upstream DNS provider.
-4. Enable the web interface.
-5. Set the administrator password.
+1. 🌐 Select the correct network interface.
+2. 📍 Confirm the Raspberry Pi IP address.
+3. 🌎 Select an upstream DNS provider.
+4. 🖥️ Enable the web interface.
+5. 🔐 Set the administrator password.
 
-## Open Pi-hole
+### Open Pi-hole
 
 ```text
 http://<RASPBERRY_PI_IP>/admin
@@ -417,9 +365,9 @@ Example:
 http://192.168.1.100/admin
 ```
 
-## Configure Router DNS
+### 🌐 Configure Router DNS
 
-To use Pi-hole for the home network, configure the router's DNS server to use the Raspberry Pi.
+Configure your router to use the Raspberry Pi as the DNS server.
 
 Example:
 
@@ -428,11 +376,9 @@ Primary DNS:
 192.168.1.100
 ```
 
-The exact procedure depends on the router.
+> ⚠️ Make sure Pi-hole works correctly before changing DNS settings for the entire network.
 
-> Make sure Pi-hole is working correctly before changing DNS settings for the entire network.
-
-Check Pi-hole status:
+Check status:
 
 ```bash
 pihole status
@@ -440,9 +386,9 @@ pihole status
 
 ---
 
-# 8. Install Jellyfin
+# 🎬 Jellyfin
 
-Jellyfin is used as the personal media server.
+## 8️⃣ Install Jellyfin
 
 Open CasaOS:
 
@@ -450,27 +396,29 @@ Open CasaOS:
 http://<RASPBERRY_PI_IP>
 ```
 
-Open the application store and install Jellyfin.
+Open the application store and install **Jellyfin**.
 
-Configure the media storage so Jellyfin can access:
-
-```text
-/mnt/storage/media
-```
+Configure the media storage.
 
 Recommended libraries:
 
 ```text
-Movies
+🎬 Movies
 └── /media/movies
 
-TV Shows
+📺 TV Shows
 └── /media/tv
 ```
 
-## Open Jellyfin
+### 🌐 Open Jellyfin
 
-Jellyfin normally uses port 8096.
+Default port:
+
+```text
+8096
+```
+
+Open:
 
 ```text
 http://<RASPBERRY_PI_IP>:8096
@@ -482,30 +430,25 @@ Example:
 http://192.168.1.100:8096
 ```
 
-Complete the Jellyfin setup wizard:
+Complete the Jellyfin setup wizard.
 
-1. Select language.
-2. Create administrator account.
-3. Add media libraries.
-4. Select media folders.
-5. Configure playback settings.
-6. Finish setup.
+### ⚡ Raspberry Pi 4 Transcoding
 
-## Raspberry Pi 4 Transcoding
-
-The Raspberry Pi 4 can run Jellyfin, but heavy video transcoding can put significant load on the system.
+The Raspberry Pi 4 can run Jellyfin, but heavy video transcoding can place significant load on the system.
 
 Whenever possible, use:
 
 ```text
-Direct Play
+▶️ Direct Play
 ```
 
-instead of requiring the Raspberry Pi to transcode video.
+instead of requiring the Raspberry Pi to transcode the media.
 
 ---
 
-# 9. Install Navidrome
+# 🎵 Navidrome
+
+## 9️⃣ Install Navidrome
 
 Navidrome is used as the personal music server.
 
@@ -517,13 +460,17 @@ mkdir -p /mnt/storage/media/music
 
 Install Navidrome through CasaOS/Docker.
 
-Configure its music library to:
+Configure the music library:
 
 ```text
 /mnt/storage/media/music
 ```
 
-Navidrome normally uses port 4533.
+Default port:
+
+```text
+4533
+```
 
 Open:
 
@@ -539,46 +486,42 @@ http://192.168.1.100:4533
 
 ---
 
-# 10. Add Music
+## 🎧 Add Music
 
-Copy music files into:
-
-```text
-/mnt/storage/media/music
-```
-
-Example:
+Example structure:
 
 ```text
-music/
+🎵 music/
+│
 ├── Artist 1/
 │   └── Album 1/
 │       ├── 01 - Song.mp3
 │       ├── 02 - Song.mp3
 │       └── 03 - Song.mp3
+│
 └── Artist 2/
     └── Album 1/
         └── 01 - Song.flac
 ```
 
-Navidrome will scan the music library and organize the collection using the available metadata.
+Navidrome scans the music library and organizes the collection using available metadata.
 
 ---
 
-# Service Access
+# 🌐 Service Access
 
-| Service | Port | Address |
+| 🧩 Service | 🔌 Port | 🌐 Example |
 |---|---:|---|
-| CasaOS | 80 | http://192.168.1.100 |
-| Pi-hole | 80 | http://192.168.1.100/admin |
-| Jellyfin | 8096 | http://192.168.1.100:8096 |
-| Navidrome | 4533 | http://192.168.1.100:4533 |
+| 🏠 CasaOS | `80` | `http://192.168.1.100` |
+| 🛡️ Pi-hole | `80` | `http://192.168.1.100/admin` |
+| 🎬 Jellyfin | `8096` | `http://192.168.1.100:8096` |
+| 🎵 Navidrome | `4533` | `http://192.168.1.100:4533` |
 
-> Ports may differ depending on your installation and configuration.
+> ℹ️ Ports may differ depending on your installation and configuration.
 
 ---
 
-# Docker
+# 🐳 Docker
 
 CasaOS uses Docker for many applications.
 
@@ -626,70 +569,33 @@ docker start <container_name>
 
 ---
 
-# Useful Linux Commands
+# 🔧 Useful Linux Commands
 
-## Check CPU and RAM
+| 🛠️ Command | 🎯 Purpose |
+|---|---|
+| `htop` | 📊 CPU and RAM monitoring |
+| `df -h` | 💽 Storage usage |
+| `lsblk` | 💾 List disks |
+| `hostname -I` | 🌐 Show IP address |
+| `ip addr` | 🌐 Network interfaces |
+| `ss -tulpn` | 🔌 Listening ports |
+| `free -h` | 🧠 Memory usage |
+| `vcgencmd measure_temp` | 🌡️ Raspberry Pi temperature |
 
-```bash
-htop
-```
-
-## Check storage
-
-```bash
-df -h
-```
-
-## List disks
-
-```bash
-lsblk
-```
-
-## Check IP address
-
-```bash
-hostname -I
-```
-
-## Check network interfaces
-
-```bash
-ip addr
-```
-
-## Check listening ports
-
-```bash
-ss -tulpn
-```
-
-## Check memory
-
-```bash
-free -h
-```
-
-## Check Raspberry Pi temperature
-
-```bash
-vcgencmd measure_temp
-```
-
-## Update packages
+### 🔄 Update
 
 ```bash
 sudo apt update
 sudo apt upgrade -y
 ```
 
-## Reboot
+### 🔁 Reboot
 
 ```bash
 sudo reboot
 ```
 
-## Shutdown
+### 🛑 Shutdown
 
 ```bash
 sudo shutdown now
@@ -697,70 +603,69 @@ sudo shutdown now
 
 ---
 
-# Security
+# 🔐 Security
 
-This server is primarily designed for use on a trusted home network.
+This server is primarily designed for a trusted home network.
 
-Recommended practices:
+### ✅ Recommended
 
-- Use strong passwords.
-- Keep DietPi updated.
-- Keep CasaOS updated.
-- Keep applications updated.
-- Avoid exposing administration panels directly to the internet.
-- Use SSH keys where possible.
-- Keep important data backed up.
-- Use a firewall where appropriate.
-- Do not expose Pi-hole administration publicly.
-- Avoid unnecessary port forwarding.
+- 🔑 Use strong passwords
+- 🔄 Keep DietPi updated
+- 🔄 Keep CasaOS updated
+- 📦 Keep applications updated
+- 🔐 Use SSH keys where possible
+- 💾 Keep important data backed up
+- 🧱 Use a firewall where appropriate
+- 🚫 Avoid unnecessary port forwarding
+- 🌐 Avoid exposing administration panels directly to the internet
 
-## Remote Access
+### 🌍 Remote Access
 
-If remote access is required, use a secure VPN or another properly configured remote-access solution rather than directly exposing administration interfaces to the public internet.
+If remote access is required, use a secure VPN or another properly configured remote-access solution instead of directly exposing administration interfaces to the public internet.
 
 ---
 
-# Backup
+# 💾 Backup
 
 The Raspberry Pi should not be considered a backup by itself.
 
 Important data should be copied to another storage device.
 
 ```text
-                 Raspberry Pi
-                      |
-              +-------+-------+
-              |               |
-          Main SSD        Backup Drive
-              |               |
-          Media Files       Backup
+                 🥧 Raspberry Pi
+                       │
+               ┌───────┴───────┐
+               │               │
+           💽 Main SSD      💾 Backup Drive
+               │               │
+           📁 Media          📦 Backup
 ```
 
-Important data to back up:
+### Important data to back up
 
-- Movies
-- TV shows
-- Music
-- Jellyfin configuration
-- Navidrome configuration
-- Navidrome database
-- Pi-hole configuration
-- CasaOS application data
+- 🎬 Movies
+- 📺 TV Shows
+- 🎵 Music
+- 🎬 Jellyfin configuration
+- 🎵 Navidrome configuration
+- 🗄️ Navidrome database
+- 🛡️ Pi-hole configuration
+- 🏠 CasaOS application data
 
 ---
 
-# Monitoring
+# 📊 Monitoring
 
 Useful information to monitor:
 
 ```text
-CPU Usage
-RAM Usage
-Storage Usage
-Temperature
-Network Activity
-Docker Containers
-Service Availability
+🧠 CPU Usage
+💾 RAM Usage
+💽 Storage Usage
+🌡️ Temperature
+🌐 Network Activity
+🐳 Docker Containers
+🟢 Service Availability
 ```
 
 Useful commands:
@@ -783,121 +688,193 @@ vcgencmd measure_temp
 
 ---
 
-# Testing
+# 🧪 Testing
 
-After completing the installation, test each service.
+After installation, test each service.
 
-### CasaOS
+| 🧪 Service | 🌐 Test Address |
+|---|---|
+| 🏠 CasaOS | `http://<RASPBERRY_PI_IP>` |
+| 🛡️ Pi-hole | `http://<RASPBERRY_PI_IP>/admin` |
+| 🎬 Jellyfin | `http://<RASPBERRY_PI_IP>:8096` |
+| 🎵 Navidrome | `http://<RASPBERRY_PI_IP>:4533` |
 
-```text
-http://<RASPBERRY_PI_IP>
-```
+---
 
-### Pi-hole
+# 📱 Client Devices
 
-```text
-http://<RASPBERRY_PI_IP>/admin
-```
-
-### Jellyfin
-
-```text
-http://<RASPBERRY_PI_IP>:8096
-```
-
-### Navidrome
+The services can be accessed from devices connected to the home network.
 
 ```text
-http://<RASPBERRY_PI_IP>:4533
+                         🏠 HOME NETWORK
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+          💻 Laptop         📱 Phone         📺 Smart TV
+              │                │                │
+              └────────────────┼────────────────┘
+                               │
+                               ▼
+                     🥧 Raspberry Pi 4
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+         🎬 Jellyfin      🎵 Navidrome      🛡️ Pi-hole
 ```
 
 ---
 
-# Client Devices
-
-Services can be accessed from computers, phones, TVs, and other devices connected to the home network.
-
-```text
-                    Home Network
-                         |
-          +--------------+--------------+
-          |              |              |
-        Laptop         Phone         Smart TV
-          |              |              |
-          +--------------+--------------+
-                         |
-                  Raspberry Pi 4
-                         |
-          +--------------+--------------+
-          |              |              |
-       Jellyfin      Navidrome      Pi-hole
-```
-
----
-
-# What I Learned
+# 📚 What I Learned
 
 This project provides practical experience with:
 
-- Linux administration
-- SSH
-- Networking
-- DNS
-- DHCP
-- Docker
-- Container management
-- Storage management
-- Media servers
-- Music servers
-- Server security
-- Raspberry Pi administration
-- Self-hosting
-
----
-
-# Future Improvements
-
-- [ ] Automated backups
-- [ ] Uptime Kuma
-- [ ] Samba file sharing
-- [ ] Home Assistant
-- [ ] WireGuard VPN
-- [ ] Server monitoring dashboard
-- [ ] Network monitoring
-- [ ] UPS battery backup
-- [ ] SSD boot
-- [ ] Automatic backup system
-- [ ] Additional self-hosted applications
-
----
-
-# Project Information
-
-| Category | Details |
+| 📚 Area | 💡 Skills |
 |---|---|
-| Project Type | Home Server / Homelab |
-| Hardware | Raspberry Pi 4 Model B |
-| Operating System | DietPi |
-| Management | CasaOS |
-| Media Server | Jellyfin |
-| Music Server | Navidrome |
-| DNS Filtering | Pi-hole |
-| Network | Ethernet |
-| Storage | USB SSD/HDD |
-| Status | Active |
+| 🐧 Linux | Server administration |
+| 🌐 Networking | IP, Ethernet, DHCP |
+| 🛡️ DNS | Pi-hole and DNS configuration |
+| 🐳 Docker | Containers and applications |
+| 💽 Storage | Mounting and organizing storage |
+| 🎬 Media | Jellyfin media server |
+| 🎵 Music | Navidrome music server |
+| 🔐 Security | Basic server security |
+| 🥧 Raspberry Pi | Hardware and Linux administration |
+| 🏠 Self-Hosting | Running services locally |
 
 ---
 
-# Official Documentation
+# 🚀 Future Improvements
 
-- Raspberry Pi: https://www.raspberrypi.com/
-- DietPi: https://dietpi.com/
-- CasaOS: https://casaos.io/
-- Pi-hole: https://pi-hole.net/
-- Jellyfin: https://jellyfin.org/
-- Navidrome: https://www.navidrome.org/
+- [ ] 💾 Automated backups
+- [ ] 📊 Uptime Kuma
+- [ ] 📁 Samba file sharing
+- [ ] 🏠 Home Assistant
+- [ ] 🔐 WireGuard VPN
+- [ ] 📊 Server monitoring dashboard
+- [ ] 🌐 Network monitoring
+- [ ] 🔋 UPS battery backup
+- [ ] 💽 SSD boot
+- [ ] 🔄 Automatic backup system
+- [ ] 📦 Additional self-hosted applications
 
 ---
+
+# 📸 Screenshots & Gallery
+
+Add your project screenshots to the `images` directory.
+
+```text
+images/
+├── 🥧 server.jpg
+├── 🏠 casaos.jpg
+├── 🎬 jellyfin.jpg
+├── 🎵 navidrome.jpg
+└── 🛡️ pihole.jpg
+```
+
+### 🥧 Raspberry Pi Server
+
+![Raspberry Pi Home Server](images/server.jpg)
+
+### 🏠 CasaOS Dashboard
+
+![CasaOS Dashboard](images/casaos.jpg)
+
+### 🎬 Jellyfin
+
+![Jellyfin Media Server](images/jellyfin.jpg)
+
+### 🎵 Navidrome
+
+![Navidrome Music Server](images/navidrome.jpg)
+
+### 🛡️ Pi-hole
+
+![Pi-hole Dashboard](images/pihole.jpg)
+
+> 📌 Replace the image filenames above with your actual screenshots.
+
+---
+
+# 📂 Repository Structure
+
+```text
+Raspberry-Pi-Home-Server/
+│
+├── 📄 README.md
+│
+├── 📸 images/
+│   ├── 🥧 server.jpg
+│   ├── 🏠 casaos.jpg
+│   ├── 🎬 jellyfin.jpg
+│   ├── 🎵 navidrome.jpg
+│   └── 🛡️ pihole.jpg
+│
+└── 📚 documentation/
+    └── notes.md
+```
+
+---
+
+# 📌 Project Information
+
+| 📋 Category | 🔎 Details |
+|---|---|
+| 🏠 Project Type | Home Server / Homelab |
+| 🥧 Hardware | Raspberry Pi 4 Model B |
+| 🐧 Operating System | DietPi |
+| 🏠 Management | CasaOS |
+| 🎬 Media Server | Jellyfin |
+| 🎵 Music Server | Navidrome |
+| 🛡️ DNS Filtering | Pi-hole |
+| 🌐 Network | Ethernet |
+| 💽 Storage | USB SSD/HDD |
+| 🟢 Status | Active |
+
+---
+
+# 🔗 Official Documentation
+
+| 🧩 Project | 🔗 Documentation |
+|---|---|
+| 🥧 Raspberry Pi | https://www.raspberrypi.com/ |
+| 🐧 DietPi | https://dietpi.com/ |
+| 🏠 CasaOS | https://casaos.io/ |
+| 🛡️ Pi-hole | https://pi-hole.net/ |
+| 🎬 Jellyfin | https://jellyfin.org/ |
+| 🎵 Navidrome | https://www.navidrome.org/ |
+
+---
+
+# 👨‍💻 Author
+
+<div align="center">
+
+## Gavindu Kavishka
+
+**Technology enthusiast building and learning through practical projects.**
+
+<br>
+
+[![GitHub](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006)
+[![Portfolio](https://img.shields.io/badge/Portfolio-gavindu2006.pages.dev-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gavindu2006.pages.dev/)
+
+<br>
+
+### 🚀 Learn. Build. Master.
+
+</div>
+
+---
+
+<div align="center">
+
+🥧 **Built with Raspberry Pi** • 🐧 **Powered by Linux** • 🏠 **Self-Hosted**
+
+</div>
+
 
 # Author
 
