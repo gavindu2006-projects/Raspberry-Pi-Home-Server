@@ -4,9 +4,9 @@
   <img src="https://img.shields.io/badge/Raspberry%20Pi-4%20Model%20B-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Raspberry Pi">
   <img src="https://img.shields.io/badge/DietPi-Linux-0F6B3A?style=for-the-badge&logo=linux&logoColor=white" alt="DietPi">
   <img src="https://img.shields.io/badge/CasaOS-Server-4CAF50?style=for-the-badge&logo=linux&logoColor=white" alt="CasaOS">
-  <img src="https://img.shields.io/badge/Jellyfin-Media-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white" alt="Jellyfin">
-  <img src="https://img.shields.io/badge/Navidrome-Music-5C6BC0?style=for-the-badge&logo=navidrome&logoColor=white" alt="Navidrome">
   <img src="https://img.shields.io/badge/Pi--hole-DNS-96060C?style=for-the-badge&logo=pihole&logoColor=white" alt="Pi-hole">
+  <img src="https://img.shields.io/badge/Navidrome-Music-5C6BC0?style=for-the-badge&logo=navidrome&logoColor=white" alt="Navidrome">
+  <img src="https://img.shields.io/badge/Jellyfin-Media-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white" alt="Jellyfin">
 </p>
 
 <p align="center">
