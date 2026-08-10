@@ -1,51 +1,64 @@
-# Raspberry Pi Home Server
+# 🏠 Raspberry Pi Home Server
 
-A lightweight self-hosted home server built with a Raspberry Pi 4 Model B.
+<p align="center">
+  <img src="https://img.shields.io/badge/Raspberry%20Pi-4%20Model%20B-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white">
+  <img src="https://img.shields.io/badge/DietPi-Linux-0F6B3A?style=for-the-badge&logo=linux&logoColor=white">
+  <img src="https://img.shields.io/badge/CasaOS-Server-4CAF50?style=for-the-badge&logo=linux&logoColor=white">
+  <img src="https://img.shields.io/badge/Jellyfin-Media-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white">
+  <img src="https://img.shields.io/badge/Navidrome-Music-5C6BC0?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Pi--hole-DNS-96060C?style=for-the-badge&logo=pihole&logoColor=white">
+</p>
 
-**Learn • Build • Self-Host**
+<p align="center">
+  A lightweight self-hosted home server built with a Raspberry Pi 4 Model B.
+</p>
+
+<p align="center">
+  <strong>Learn • Build • Self-Host</strong>
+</p>
 
 ---
 
-## About
+## 📖 About
 
-This project turns a Raspberry Pi 4 Model B into a lightweight home server for running useful self-hosted services on a local network.
+This project turns a **Raspberry Pi 4 Model B** into a lightweight home server for running useful self-hosted services on a local network.
 
-The server uses DietPi as the operating system and CasaOS as a simple web-based interface for managing applications.
+The server uses **DietPi** as the operating system and **CasaOS** as a simple web-based interface for managing applications.
 
 ### Services
 
-- Pi-hole — Network-wide DNS filtering
-- Jellyfin — Personal media server
-- Navidrome — Personal music server
-- CasaOS — Server and application management
+- 🛡️ **Pi-hole** — Network-wide DNS filtering
+- 🎬 **Jellyfin** — Personal media server
+- 🎵 **Navidrome** — Personal music server
+- 🏠 **CasaOS** — Server and application management
 
-The project is also a practical home lab for learning Linux, networking, Docker, storage management, server administration, and self-hosting.
+The project is also a practical home lab for learning **Linux, networking, Docker, storage management, server administration, and self-hosting**.
 
 ---
 
-## Features
+## ✨ Features
 
-### Self-Hosted Home Server
+### 🖥️ Self-Hosted Home Server
 
 Run useful services locally on your own Raspberry Pi instead of depending entirely on cloud services.
 
-### Media Streaming
+### 🎬 Media Streaming
 
 Use Jellyfin to organize and stream personal movies and TV shows across devices on the home network.
 
-### Music Streaming
+### 🎵 Music Streaming
 
 Use Navidrome to access and stream a personal music collection from computers, phones, and other supported devices.
 
-### Network-Wide DNS Filtering
+### 🛡️ Network-Wide DNS Filtering
 
 Pi-hole provides DNS-based ad and tracker blocking for devices connected to the home network.
 
-### Simple Server Management
+### ⚙️ Simple Server Management
 
 CasaOS provides a convenient web interface for managing applications and services running on the server.
 
-### Lightweight Linux Server
+### 🐧 Lightweight Linux Server
 
 DietPi provides a lightweight Linux environment designed to keep resource usage low on Raspberry Pi hardware.
 
