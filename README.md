@@ -858,55 +858,6 @@ This project provides practical experience with:
 
 ---
 
-# Project Gallery
-
-Add your project images to the images directory.
-
-```text
-images/
-├── server.jpg
-├── casaos.jpg
-├── jellyfin.jpg
-├── navidrome.jpg
-└── pihole.jpg
-```
-
-Use them in the README:
-
-```markdown
-![Raspberry Pi Home Server](images/server.jpg)
-
-![CasaOS Dashboard](images/casaos.jpg)
-
-![Jellyfin](images/jellyfin.jpg)
-
-![Navidrome](images/navidrome.jpg)
-
-![Pi-hole](images/pihole.jpg)
-```
-
----
-
-# Repository Structure
-
-```text
-Raspberry-Pi-Home-Server/
-|
-├── README.md
-|
-├── images/
-|   ├── server.jpg
-|   ├── casaos.jpg
-|   ├── jellyfin.jpg
-|   ├── navidrome.jpg
-|   └── pihole.jpg
-|
-└── documentation/
-    └── notes.md
-```
-
----
-
 # Project Information
 
 | Category | Details |
