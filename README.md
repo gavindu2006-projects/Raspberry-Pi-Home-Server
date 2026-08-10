@@ -733,7 +733,7 @@ This project provides practical experience with:
 <br>
 
 [![GitHub (Main)](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006)
-[![GitHub (Project)](https://img.shields.io/badge/GitHub-gavindu2006-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006-projects)
+[![GitHub (Project)](https://img.shields.io/badge/GitHub-gavindu2006-projects-181717?style=for-the-badge&logo=github)](https://github.com/gavindu2006-projects)
 
 <br>
 
