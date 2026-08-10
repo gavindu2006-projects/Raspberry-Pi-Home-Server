@@ -941,5 +941,6 @@ Raspberry-Pi-Home-Server/
 
 Technology enthusiast building and learning through practical projects.
 
-- GitHub: https://github.com/gavindu2006
-- Portfolio: https://gavindu2006.pages.dev/
+- GitHub (Main): https://github.com/gavindu2006
+- GitHub (Project): https://github.com/gavindu2006-projects
+- Portfolio: https://gavindu2006.pages.dev
